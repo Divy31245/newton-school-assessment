@@ -7,11 +7,11 @@ function App() {
   const newRef = useRef(null);
 
   useEffect(() => {
-    previousVal.current = count;
-  }, [count]);
+    // write your solution here for counting the previous value of state(counter)
+  }, []);
 
   useEffect(() => {
-    renderCount.current = renderCount.current + 1;
+    // write your solution here for counting the app renders
   });
   const handleClickLeft = () => {
     setCount((count) => count - 1);
@@ -22,7 +22,7 @@ function App() {
   };
 
   const executeScroll = () => {
-    newRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    // write your solution here to access the given division directly through scroll
   };
   return (
     <div className="App">
@@ -32,10 +32,18 @@ function App() {
         <div>2.Count how many times the component render.</div>
         <div>3.Access DOM elements directly.</div>
         <div className="btns">
-          <button data-cy="decrement" className="btninc" onClick={handleClickLeft}>
+          <button
+            data-cy="decrement"
+            className="btninc"
+            onClick={handleClickLeft}
+          >
             -
           </button>
-          <button data-cy="increment" className="btninc" onClick={handleClickRight}>
+          <button
+            data-cy="increment"
+            className="btninc"
+            onClick={handleClickRight}
+          >
             +
           </button>
         </div>
@@ -48,10 +56,8 @@ function App() {
           Click here to go to a new Division
         </button>
       </div>
-
-      <div ref={newRef} className="new-div">
-        New Division
-      </div>
+      {/* to access this division using click operation what should you add in the below div tag??  */}
+      <div className="new-div">New Division</div>
     </div>
   );
 }
